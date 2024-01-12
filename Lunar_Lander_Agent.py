@@ -38,4 +38,24 @@ eval_env = Monitor(gym.make("LunarLander-v2"))
 mean_reward, std_reward = evaluate_policy(model, eval_env, n_eval_episodes=10, deterministic=True)
 print(f"mean_reward={mean_reward:.2f} +/- {std_reward}")
 
+model_architecture = "PPO"
+
+## CHANGE WITH YOUR REPO ID
+repo_id = "Hasan3773/ppo-LunarLander-v2" # Change with your repo id, you can't push with mine 😄
+
+## Define the commit message
+commit_message = "Upload PPO LunarLander-v2 trained agent"
+
+# Create the evaluation env and set the render_mode="rgb_array"
+eval_env = DummyVecEnv([lambda: gym.make(env_id, render_mode="rgb_array")])
+
+# PLACE the package_to_hub function you've just filled here
+package_to_hub(model=model, # Our trained model
+               model_name=Lunar_Agent, # The name of our trained model
+               model_architecture=PPO, # The model architecture we used: in our case PPO
+               env_id=LunarLander-v2, # Name of the environment
+               eval_env=eval_env, # Evaluation Environment
+               repo_id=Hasan3773/ppo-LunarLander-v2, # id of the model repository from the Hugging Face Hub 
+               commit_message='Created Lunar Agent')
+
 env.close()
