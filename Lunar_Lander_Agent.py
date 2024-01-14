@@ -41,7 +41,7 @@ print(f"mean_reward={mean_reward:.2f} +/- {std_reward}")
 model_architecture = "PPO"
 
 ## CHANGE WITH YOUR REPO ID
-repo_id = "Hasan3773/ppo-LunarLander-v2" # Change with your repo id, you can't push with mine 😄
+repo_id = "Hasan3773/ppo-LunarLander-v2"
 
 ## Define the commit message
 commit_message = "Upload PPO LunarLander-v2 trained agent"
